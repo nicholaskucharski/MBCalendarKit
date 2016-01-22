@@ -9,7 +9,6 @@
 #import "CKCalendarView.h"
 
 //  Auxiliary Views
-#import "CKCalendarHeaderView.h"
 #import "CKCalendarCell.h"
 #import "CKTableViewCell.h"
 
@@ -597,6 +596,21 @@
     [_calendar setLocale:_locale];
     [_calendar setFirstWeekday:_firstWeekDay];
     
+    [self layoutSubviews];
+}
+
+- (void)setHeader:(CKCalendarHeaderView *)header
+{
+    [self setHeader:header animated:NO];
+}
+
+- (void)setHeader:(CKCalendarHeaderView *)header animated:(BOOL)animated
+{
+    if (header == nil) {
+        return;
+    }
+
+    _headerView = header;
     [self layoutSubviews];
 }
 

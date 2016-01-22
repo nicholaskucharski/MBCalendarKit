@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "CKCalendarViewModes.h"
+#import "CKCalendarHeaderView.h"
 
 #import "CKCalendarEvent.h"
 
@@ -46,6 +47,9 @@
 
 - (void)setCalendar:(NSCalendar *)calendar;
 - (void)setCalendar:(NSCalendar *)calendar animated:(BOOL)animated;
+
+- (void)setHeader:(CKCalendarHeaderView *)header;
+- (void)setHeader:(CKCalendarHeaderView *)header animated:(BOOL)animated;
 
 - (void)setDate:(NSDate *)date;
 - (void)setDate:(NSDate *)date animated:(BOOL)animated;
