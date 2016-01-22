@@ -113,8 +113,8 @@
     
     /* Show the forward and back buttons */
 
-        CGRect backFrame = CGRectMake(yOffset, yOffset, titleLabelHeight, titleLabelHeight);
-        CGRect forwardFrame = CGRectMake([self frame].size.width-titleLabelHeight-yOffset, yOffset, titleLabelHeight, titleLabelHeight);
+    CGRect backFrame = CGRectMake(yOffset, yOffset, titleLabelHeight, titleLabelHeight);
+    CGRect forwardFrame = CGRectMake([self frame].size.width-titleLabelHeight-yOffset, yOffset, titleLabelHeight, titleLabelHeight);
     
     if ([self forwardButton]) {
         [[self forwardButton] removeFromSuperview];
@@ -126,8 +126,8 @@
         [self setBackwardButton:nil];
     }
     
-    _forwardButton = [[MBPolygonView alloc] initWithFrame:forwardFrame numberOfSides:3 andRotation:90.0 andScale:10.0];
-    _backwardButton = [[MBPolygonView alloc] initWithFrame:backFrame numberOfSides:3 andRotation:30.0 andScale:10.0];
+    _forwardButton = [[MBPolygonView alloc] initWithFrame:forwardFrame numberOfSides:3 andRotation:90.0 andScale:self.buttonScale];
+    _backwardButton = [[MBPolygonView alloc] initWithFrame:backFrame numberOfSides:3 andRotation:30.0 andScale:self.buttonScale];
     
     if ([self shouldDisableForwardButton]) {
         [[self forwardButton] setAlpha:0.5];
