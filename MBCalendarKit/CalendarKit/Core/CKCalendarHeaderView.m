@@ -193,7 +193,10 @@
     [label setShadowColor:self.headerWeekdayShadowColor];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setFont:self.headerWeekdayTitleFont];
-    [label setShadowOffset:CGSizeMake(0, 1)];
+
+    if (self.headerWeekdayShadowColor != nil) {
+        [label setShadowOffset:CGSizeMake(0, 1)];
+    }
 }
 
 /* Creates and configures a label for a column title */
