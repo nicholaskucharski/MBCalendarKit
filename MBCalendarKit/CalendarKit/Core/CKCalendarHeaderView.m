@@ -58,7 +58,8 @@
         
         _columnTitles = [NSMutableArray new];
         _columnLabels = [NSMutableArray new];
-        
+
+        _buttonScale = 10.0;
         _columnTitleHeight = 10;
         
         _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)];
