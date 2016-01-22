@@ -43,6 +43,9 @@
 - (void)reload;
 - (void)reloadAnimated:(BOOL)animated;
 
+/* appearance */
+@property (nonatomic, strong) UIColor *shadowColor UI_APPEARANCE_SELECTOR;
+
 /* Setters */
 
 - (void)setCalendar:(NSCalendar *)calendar;

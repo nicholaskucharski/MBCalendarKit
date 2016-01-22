@@ -65,6 +65,7 @@
     _usedCells = [NSMutableSet new];
     _selectedIndex = [_calendar daysFromDate:[self _firstVisibleDateForDisplayMode:_displayMode] toDate:_date];
     _headerView = [CKCalendarHeaderView new];
+    _shadowColor = [UIColor darkGrayColor];
     
     
     //  Accessory Table
@@ -168,14 +169,24 @@
     [self layoutSubviewsAnimated:animated];
 }
 
+#pragma mark - Convenience Methods
+
+- (void)updateShadowColor
+{
+    [[self layer] setShadowColor:[self.shadowColor CGColor]];
+    if (self.shadowColor != nil ) {
+        [[self layer] setShadowOffset:CGSizeMake(0, 3)];
+        [[self layer] setShadowOpacity:1.0];
+    } else {
+        [[self layer] setShadowOpacity:0.0];
+    }
+}
+
 #pragma mark - View Hierarchy
 
 - (void)willMoveToSuperview:(UIView *)newSuperview
 {
-    [[self layer] setShadowColor:[[UIColor darkGrayColor] CGColor]];
-    [[self layer] setShadowOffset:CGSizeMake(0, 3)];
-    [[self layer] setShadowOpacity:1.0];
-    
+    [self updateShadowColor];
     [self reloadAnimated:NO];
     
     [super willMoveToSuperview:newSuperview];
@@ -1353,6 +1364,13 @@
     
     NSDate *dateToSelect = [[self calendar] dateByAddingDays:[self selectedIndex] toDate:firstDate];
     [self setDate:dateToSelect animated:NO];
+}
+
+#pragma mark - Appearance Handling
+
+- (void)setShadowColor:(UIColor *)shadowColor {
+    _shadowColor = shadowColor;
+    [self updateShadowColor];
 }
 
 @end
