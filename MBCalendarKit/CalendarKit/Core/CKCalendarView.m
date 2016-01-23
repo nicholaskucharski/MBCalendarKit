@@ -1056,10 +1056,22 @@
     return count;
 }
 
+- (Boolean)canReturnTableViewCellFromDelegate {
+    return [[self delegate] respondsToSelector:@selector(cellForEvent:)];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger count = [[self events] count];
-    
+
+    if ([self canReturnTableViewCellFromDelegate]) {
+        CKCalendarEvent *event = nil;
+        if (count > 0) {
+            event = [[self events] objectAtIndex:[indexPath row]];
+        }
+        return [[self delegate] cellForEvent:event];
+    }
+
     if (count == 0) {
         UITableViewCell *cell = [[self table] dequeueReusableCellWithIdentifier:@"noDataCell"];
         [[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
@@ -1090,7 +1102,7 @@
     layer.frame = colorView.frame;
     [colorView.layer insertSublayer:layer atIndex:0];
     
-    if(nil != event.image)
+    if(event.image != nil)
     {
         cell.imageView.image = [UIImage imageWithData:event.image];
     }
