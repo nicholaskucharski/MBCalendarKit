@@ -1057,7 +1057,7 @@
 }
 
 - (Boolean)canReturnTableViewCellFromDelegate {
-    return [[self delegate] respondsToSelector:@selector(cellForEvent:)];
+    return [[self delegate] respondsToSelector:@selector(tableView:cellForEvent:)];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -1069,7 +1069,7 @@
         if (count > 0) {
             event = [[self events] objectAtIndex:[indexPath row]];
         }
-        return [[self delegate] cellForEvent:event];
+        return [[self delegate] tableView:[self table] cellForEvent:event];
     }
 
     if (count == 0) {

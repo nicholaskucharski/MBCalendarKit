@@ -21,7 +21,7 @@
 - (void)calendarView:(CKCalendarView *)CalendarView didSelectDate:(NSDate *)date;
 
 // View for rows in the events table.
-- (UITableViewCell *)cellForEvent:(CKCalendarEvent *)event;
+- (UITableViewCell *)tableView: (UITableView *)tableView cellForEvent:(CKCalendarEvent *)event;
 
 //  A row is selected in the events table. (Use to push a detail view or whatever.)
 - (void)calendarView:(CKCalendarView *)CalendarView didSelectEvent:(CKCalendarEvent *)event;
