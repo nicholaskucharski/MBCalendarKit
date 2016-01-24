@@ -1055,7 +1055,7 @@
     NSInteger count = [[self events] count];
     
     if (count == 0) {
-        count = 2;
+        count = 1;
     }
     
     return count;
@@ -1082,14 +1082,8 @@
         [[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
         [[cell textLabel] setTextColor:[UIColor colorWithWhite:0.2 alpha:0.8]];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        
-        if ([indexPath row] == 1) {
-            [[cell textLabel] setText:NSLocalizedString(@"No Events", @"A label for a table with no events.")];
-        }
-        else
-        {
-            [[cell textLabel] setText:@""];
-        }
+        [[cell textLabel] setText:NSLocalizedString(@"No Events", @"A label for a table with no events.")];
+
         return cell;
     }
 
