@@ -432,9 +432,14 @@
             BOOL cellRepresentsToday = [[self calendar] date:workingDate isSameDayAs:[NSDate date]];
             BOOL isThisMonth = [[self calendar] date:workingDate isSameMonthAs:[self date]];
             BOOL isInRange = [self _dateIsBetweenMinimumAndMaximumDates:workingDate];
-            isInRange = isInRange || [[self calendar] date:workingDate isSameDayAs:[self minimumDate]];
-            isInRange = isInRange || [[self calendar] date:workingDate isSameDayAs:[self maximumDate]];
-            
+
+            if ([self minimumDate] != nil) {
+                isInRange = isInRange || [[self calendar] date:workingDate isSameDayAs:[self minimumDate]];
+            }
+            if ([self maximumDate] != nil) {
+                isInRange = isInRange || [[self calendar] date:workingDate isSameDayAs:[self maximumDate]];
+            }
+
             /* STEP 3:  Here we style the cells accordingly.
              
              If the cell represents "today" then select it, and set
