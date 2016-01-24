@@ -747,7 +747,7 @@
 
 - (void)setMaximumDate:(NSDate *)maximumDate
 {
-    [self setMaximumDate:[self date] animated:NO];
+    [self setMaximumDate:maximumDate animated:NO];
 }
 
 - (void)setMaximumDate:(NSDate *)maximumDate animated:(BOOL)animated
