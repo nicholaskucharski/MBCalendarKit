@@ -126,6 +126,7 @@
 
 - (void)setShowDot:(BOOL)showDot
 {
+    if ([self dotColor] == nil) { return; }
     _showDot = showDot;
     [[self dot] setHidden:!showDot];
 }
@@ -159,6 +160,7 @@
 
 - (void)configureDot
 {
+    if ([self dotColor] == nil) { return; }
     UIView *dot = [self dot];
     
     CGFloat dotRadius = 3;
