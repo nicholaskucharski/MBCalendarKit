@@ -273,6 +273,10 @@
     {
         [self setState:CKCalendarMonthCellStateTodaySelected];
     }
+    else if(state == CKCalendarMonthCellStateHighlighted)
+    {
+        [self setState:CKCalendarMonthCellStateSelected];
+    }
 }
 
 - (void)setDeselected
