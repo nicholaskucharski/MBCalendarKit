@@ -21,6 +21,7 @@
 // Background colors
 @property (nonatomic, strong) UIColor *normalBackgroundColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *selectedBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *highlightedBackgroundColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *inactiveSelectedBackgroundColor UI_APPEARANCE_SELECTOR;
 
 //  Overrides normalBackgroundColor and selectedBackgroundColor for cell representing today
@@ -39,6 +40,9 @@
 @property (nonatomic, strong) UIColor *textSelectedColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *textSelectedShadowColor UI_APPEARANCE_SELECTOR;
 
+// Highlighted text color
+@property (nonatomic, strong) UIColor *textHighlightedColor UI_APPEARANCE_SELECTOR;
+
 // Color for the event dot
 @property (nonatomic, strong) UIColor *dotColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *selectedDotColor UI_APPEARANCE_SELECTOR;
@@ -46,6 +50,7 @@
 // Border colors
 @property (nonatomic, strong) UIColor *cellBorderColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *selectedCellBorderColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *highlightedCellBorderColor UI_APPEARANCE_SELECTOR;
 
 
 - (id)initWithSize:(CGSize)size;

@@ -449,15 +449,21 @@
              
              If the cell can't be selected, hide the number entirely.
              */
-            
-            if (cellRepresentsToday && isThisMonth && isInRange) {
+
+            if ([[self delegate] respondsToSelector:@selector(shouldHighlightCellForDate:)] &&
+                [[self delegate] shouldHighlightCellForDate:workingDate]) {
+                [cell setState:CKCalendarMonthCellStateHighlighted];
+            }
+            else if (cellRepresentsToday && isThisMonth && isInRange)
+            {
                 [cell setState:CKCalendarMonthCellStateTodayDeselected];
             }
-            else if(!isInRange)
+            else if (!isInRange)
             {
                 [cell setOutOfRange];
             }
-            else if (!isThisMonth) {
+            else if (!isThisMonth)
+            {
                 [cell setState:CKCalendarMonthCellStateInactive];
             }
             else

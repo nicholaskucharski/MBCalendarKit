@@ -20,6 +20,8 @@
 - (void)calendarView:(CKCalendarView *)CalendarView willSelectDate:(NSDate *)date;
 - (void)calendarView:(CKCalendarView *)CalendarView didSelectDate:(NSDate *)date;
 
+- (Boolean)shouldHighlightCellForDate:(NSDate *)date;
+
 // View for rows in the events table.
 - (UITableViewCell *)tableView: (UITableView *)tableView cellForEvent:(CKCalendarEvent *)event;
 

@@ -33,6 +33,7 @@
         //  Normal Cell Colors
         _normalBackgroundColor = kCalendarColorLightGray;
         _selectedBackgroundColor = kCalendarColorBlue;
+        _highlightedBackgroundColor = [UIColor greenColor];
         _inactiveSelectedBackgroundColor = kCalendarColorDarkGray;
         
         //  Today Cell Colors
@@ -45,6 +46,7 @@
         _textColor = kCalendarColorDarkTextGradient;
         _textShadowColor = [UIColor whiteColor];
         _textSelectedColor = [UIColor whiteColor];
+        _textHighlightedColor = [UIColor whiteColor];
         _textSelectedShadowColor = kCalendarColorSelectedShadowBlue;
         
         _dotColor = kCalendarColorDarkTextGradient;
@@ -52,6 +54,7 @@
         
         _cellBorderColor = kCalendarColorCellBorder;
         _selectedCellBorderColor = kCalendarColorSelectedCellBorder;
+        _highlightedCellBorderColor = [UIColor greenColor];
         
         // Label
         _label = [UILabel new];
@@ -202,8 +205,8 @@
         [[self label] setTextColor:[self todayTextColor]];
         [self setBorderColor:[self backgroundColor]];
     }
-    
-    //  Today cell, selected
+
+    //  Today cell, deselected
     else if(state == CKCalendarMonthCellStateTodayDeselected)
     {
         [self setBackgroundColor:[self todayBackgroundColor]];
@@ -221,6 +224,13 @@
         [[self label] setTextColor:[self textSelectedColor]];
         [[self label] setShadowColor:[self textSelectedShadowColor]];
         [[self label] setShadowOffset:CGSizeMake(0, -0.5)];
+    }
+
+    else if(state == CKCalendarMonthCellStateHighlighted)
+    {
+        [self setBackgroundColor:[self highlightedBackgroundColor]];
+        [self setBorderColor:[self highlightedCellBorderColor]];
+        [[self label] setTextColor:[self textHighlightedColor]];
     }
     
     if (state == CKCalendarMonthCellStateInactive) {

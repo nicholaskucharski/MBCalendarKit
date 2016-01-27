@@ -14,7 +14,8 @@ typedef enum {
     CKCalendarMonthCellStateTodayDeselected = 1,    //  Today's cell, unselected
     CKCalendarMonthCellStateNormal,                 //  Cells that are part of this month, unselected
     CKCalendarMonthCellStateSelected,               //  Cells that are part of this month, selected
-    CKCalendarMonthCellStateInactive,               //  Cells that are not part of this month
+    CKCalendarMonthCellStateHighlighted,               //  Cells that are part of this month, selected
+    CKCalendarMonthCellStateInactive,               //  Cells that are highlighted or called-out for some reason
     CKCalendarMonthCellStateInactiveSelected,       //  Transient state for out of month cells
     CKCalendarMonthCellStateOutOfRange              //  A state for cells that are bounded my min/max constraints on the calendar picker 
     
