@@ -60,6 +60,7 @@
         _columnLabels = [NSMutableArray new];
 
         _buttonScale = 10.0;
+        _buttonDisabledAlpha = 0.5;
         _columnTitleHeight = 10.0;
         
         _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)];
@@ -131,11 +132,11 @@
     _backwardButton = [[MBPolygonView alloc] initWithFrame:backFrame numberOfSides:3 andRotation:30.0 andScale:self.buttonScale];
     
     if ([self shouldDisableForwardButton]) {
-        [[self forwardButton] setAlpha:0.5];
+        [[self forwardButton] setAlpha:[self buttonDisabledAlpha]];
     }
     
     if ([self shouldDisableBackwardButton]) {
-        [[self backwardButton] setAlpha:0.5];
+        [[self backwardButton] setAlpha:[self buttonDisabledAlpha]];
     }
     
     [self addSubview:[self backwardButton]];

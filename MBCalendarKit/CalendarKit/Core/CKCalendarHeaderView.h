@@ -46,6 +46,7 @@
 @property (nonatomic, strong) UIColor *headerTitleHighlightedTextColor UI_APPEARANCE_SELECTOR;
 
 @property (nonatomic, assign) CGFloat buttonScale UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) CGFloat buttonDisabledAlpha UI_APPEARANCE_SELECTOR;
 @property (nonatomic, assign) CGFloat columnTitleHeight UI_APPEARANCE_SELECTOR;
 
 @property (nonatomic, assign) id<CKCalendarHeaderViewDataSource> dataSource;
