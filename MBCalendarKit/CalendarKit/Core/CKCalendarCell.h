@@ -30,6 +30,7 @@
 
 //  Text colors for today override the default text colors
 @property (nonatomic, strong) UIColor *todayTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *todaySelectedTextColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *todayTextShadowColor UI_APPEARANCE_SELECTOR;
 
 // Text color and shadow color

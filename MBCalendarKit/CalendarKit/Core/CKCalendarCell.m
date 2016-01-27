@@ -40,6 +40,7 @@
         _todayBackgroundColor = kCalendarColorBluishGray;
         _todaySelectedBackgroundColor = kCalendarColorBlue;
         _todayTextShadowColor = kCalendarColorTodayShadowBlue;
+        _todaySelectedTextColor = [UIColor whiteColor];
         _todayTextColor = [UIColor whiteColor];
         
         //  Text Colors
@@ -202,7 +203,7 @@
     {
         [self setBackgroundColor:[self todaySelectedBackgroundColor]];
         [[self label] setShadowColor:[self todayTextShadowColor]];
-        [[self label] setTextColor:[self todayTextColor]];
+        [[self label] setTextColor:[self todaySelectedTextColor]];
         [self setBorderColor:[self backgroundColor]];
     }
 
