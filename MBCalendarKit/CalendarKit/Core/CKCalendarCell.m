@@ -204,7 +204,7 @@
         [self setBackgroundColor:[self todaySelectedBackgroundColor]];
         [[self label] setShadowColor:[self todayTextShadowColor]];
         [[self label] setTextColor:[self todaySelectedTextColor]];
-        [self setBorderColor:[self backgroundColor]];
+        [self setBorderColor:[self cellBorderColor]];
     }
 
     //  Today cell, deselected
@@ -213,7 +213,7 @@
         [self setBackgroundColor:[self todayBackgroundColor]];
         [[self label] setShadowColor:[self todayTextShadowColor]];
         [[self label] setTextColor:[self todayTextColor]];
-        [self setBorderColor:[self backgroundColor]];
+        [self setBorderColor:[self cellBorderColor]];
         [self showBorder];
     }
     
